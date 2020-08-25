@@ -3,7 +3,7 @@
     <view class="example-body">
  
 
-      <iv-nav-bar color="white" :status-bar="true"  title="修畸之家"  right-icon="chatbubble"  left-icon="phone"  background-color="#2ea8ab">
+      <iv-nav-bar color="white" :status-bar="true"  title="修畸之家" @clickLeft="serverBtn" @clickRight="newsBtn"  right-icon="chatbubble"  left-icon="phone"  background-color="#2ea8ab">
         <view slot="left"></view>
         <view slot="right">	<uni-badge class="uni-badge-left-margin" :text="badgeSun" type="error" size="small" /></view>
       </iv-nav-bar>
@@ -114,7 +114,7 @@ export default {
       },{
           url:"../../static/menu/doctor-icon.png",
           text:"医师管理",
-          topage:"",
+          topage:"doctorList",
           badge:3
       }],
       badgeSun:'22',//右上角角标
@@ -158,6 +158,11 @@ export default {
         },
       });
     },
+    newsBtn(){
+            uni.navigateTo({
+             url: "newsList"
+           });
+    }
   },
 };
 </script>
